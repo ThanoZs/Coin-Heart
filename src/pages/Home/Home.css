@@ -41,7 +41,7 @@
 }
 .hero button{
     border: none;
-    background: #7927ff;
+    background: #454992;
     color: white;
     font-size: 16px;
     padding: 10px 30px;
@@ -51,7 +51,7 @@
 .crypto-table{
     max-width: 800px;
     margin: auto;
-    background: linear-gradient(135deg, rgba(0, 200, 255, 0.1), rgba(120, 0, 255, 0.1));
+    background: linear-gradient(135deg, rgba(38, 87, 236, 0.1), rgba(56, 63, 202, 0.1));
     border-radius: 15px;
 
 }
@@ -81,7 +81,7 @@
     text-align: center;
 }
 .table-layout .red{
-    color: #ff4646;
+    color: #514fa0;
     text-align: center;
 }
 @media (max-width: 768px){

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Chart from 'react-google-charts';
+import './LineChart.css'; // <-- Import CSS
 
 const LineChart = ({ historicalData }) => {
   const [data, setData] = useState([["Date", "Prices"]]);
@@ -8,15 +9,13 @@ const LineChart = ({ historicalData }) => {
     if (!historicalData || !historicalData.prices) return;
 
     const chartData = [["Date", "Prices"]];
-    const dailyData = {}; // to keep only one price per day
+    const dailyData = {};
 
-    // Aggregate data: take last price of each day
     historicalData.prices.forEach(([timestamp, price]) => {
       const date = new Date(timestamp).toLocaleDateString().slice(0, -5);
-      dailyData[date] = price; // last price for the day
+      dailyData[date] = price;
     });
 
-    // Keep only the latest 10 days
     const last10Days = Object.entries(dailyData)
       .slice(-10)
       .map(([date, price]) => [date, price]);
@@ -25,13 +24,36 @@ const LineChart = ({ historicalData }) => {
     setData(chartData);
   }, [historicalData]);
 
+  const options = {
+    hAxis: {
+      slantedText: false,
+      maxAlternation: 1,
+      maxTextLines: 1,
+      textStyle: { fontSize: 12 },
+    },
+    vAxis: {
+      textStyle: { fontSize: 12 },
+    },
+    chartArea: {
+      left: 65,
+      right: 20,
+      top: 20,
+      bottom: 75,
+      width: "100%",
+      height: "80%",
+    },
+    legend: { position: "none" },
+  };
+
   return (
-    <Chart
-      chartType="LineChart"
-      data={data}
-      height="400px"
-      legendToggle
-    />
+    <div className="chart-wrapper">
+      <Chart
+        chartType="LineChart"
+        data={data}
+        height="376px"
+        options={options}
+      />
+    </div>
   );
 };
 

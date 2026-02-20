@@ -1,0 +1,11 @@
+.chart-wrapper {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 10px;   /* rounded card */
+  box-shadow: 0 6px 20px #00000033;
+  margin-bottom: 40px;   /* <-- spacing between chart & fundamentals */
+  width: 90%;
+  max-width: 900px;
+  margin-left: 10%;
+  margin-right: 30%;
+}

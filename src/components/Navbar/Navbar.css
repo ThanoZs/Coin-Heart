@@ -4,7 +4,7 @@
     justify-content: space-between;
     padding: 20px 10%;
     color: #add;
-    border-bottom: 2px solid #3c3c3c;
+    border-bottom: 2px solid hsl(180, 1%, 37%);
 }
 .navbar .logo{
     width: max(12vw, 120px);
@@ -30,7 +30,7 @@
     color: white;
 }
 .navbar option{
-    background-color: #09005c;
+    background-color: #032f3e;
     color: white;
 }
 .navbar button{
